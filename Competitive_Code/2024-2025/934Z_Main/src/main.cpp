@@ -349,6 +349,7 @@ public:
 
     for (int i = 0; i < motorList.size(); i++)
     {
+      /* OLD CODE 
       if (motorList[i].getMotorCartridge() == vex::gearSetting::ratio36_1)
       {
         motorCartridgeType = "Red";
@@ -360,6 +361,17 @@ public:
       else
       {
         motorCartridgeType = "Blue";
+      } */
+
+      switch(motorList[i].getMotorCartridge()) {
+        case vex::gearSetting::ratio36_1:
+          motorCartridgeType = "Red";
+          break;
+        case vex::gearSetting::ratio18_1:
+          motorCartridgeType = "Green";
+          break;
+        default:
+          motorCartridgeType = "Blue";
       }
 
       if (motorList[i].getMotorType() == 0)
