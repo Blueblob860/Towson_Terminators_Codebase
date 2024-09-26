@@ -364,10 +364,10 @@ public:
       } */
 
       switch(motorList[i].getMotorCartridge()) {
-        case vex::gearSetting::ratio36_1:
+        case (vex::gearSetting::ratio36_1):
           motorCartridgeType = "Red";
           break;
-        case vex::gearSetting::ratio18_1:
+        case (vex::gearSetting::ratio18_1):
           motorCartridgeType = "Green";
           break;
         default:
@@ -455,13 +455,13 @@ vex::color getColorFromValue(std::string value, Keywords keyword)
       return color::red;
     } */
     switch(value) {
-      case "AUTON":
+      case ("AUTON"):
         return color::orange;
         break;
-      case "DRIVER":
+      case ("DRIVER"):
         return color::green;
         break;
-      case "PRE-AUTON":
+      case ("PRE-AUTON"):
         return color::yellow;
         break;
       default:
@@ -484,10 +484,10 @@ vex::color getColorFromValue(std::string value, Keywords keyword)
       return color::blue;
     } */
     switch(value) {
-      case "Green":
+      case ("Green"):
         return color::green;
         break;
-      case "Red":
+      case ("Red"):
         return color::red;
       default:
         return color::blue;
@@ -629,11 +629,11 @@ vex::color getColorFromValue(GameStates value, Keywords keyword)
       return color::red;
     } */
     switch(value) {
-      case AUTONOMOUS:
+      case (AUTONOMOUS):
         return color::orange; break;
-      case: USER_CONTROL:
+      case: (USER_CONTROL):
         return color::green; break;
-      case PRE_AUTONOMOUS:
+      case (PRE_AUTONOMOUS):
         return color::yellow; break;
       default:
         return color::red; break;
