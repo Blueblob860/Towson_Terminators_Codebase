@@ -438,7 +438,7 @@ vex::color getColorFromValue(std::string value, Keywords keyword)
 {
   if (keyword == GAME_STATE)
   {
-    if (value == "AUTON")
+    /* if (value == "AUTON")
     {
       return color::orange;
     }
@@ -453,11 +453,25 @@ vex::color getColorFromValue(std::string value, Keywords keyword)
     else
     {
       return color::red;
+    } */
+    switch(value) {
+      case "AUTON":
+        return color::orange;
+        break;
+      case "DRIVER":
+        return color::green;
+        break;
+      case "PRE-AUTON":
+        return color::yellow;
+        break;
+      default:
+        return color::red;
+        break;
     }
   }
   else if (keyword == MOTOR_CARTRIDGE)
   {
-    if (value == "Green")
+    /* if (value == "Green")
     {
       return color::green;
     }
@@ -468,6 +482,15 @@ vex::color getColorFromValue(std::string value, Keywords keyword)
     else
     {
       return color::blue;
+    } */
+    switch(value) {
+      case "Green":
+        return color::green;
+        break;
+      case "Red":
+        return color::red;
+      default:
+        return color::blue;
     }
   }
   return color::white;
@@ -589,7 +612,7 @@ vex::color getColorFromValue(GameStates value, Keywords keyword)
 {
   if (keyword == GAME_STATE)
   {
-    if (value == AUTONOMOUS)
+    /* if (value == AUTONOMOUS)
     {
       return color::orange;
     }
@@ -604,6 +627,16 @@ vex::color getColorFromValue(GameStates value, Keywords keyword)
     else
     {
       return color::red;
+    } */
+    switch(value) {
+      case AUTONOMOUS:
+        return color::orange; break;
+      case: USER_CONTROL:
+        return color::green; break;
+      case PRE_AUTONOMOUS:
+        return color::yellow; break;
+      default:
+        return color::red; break;
     }
   }
 
