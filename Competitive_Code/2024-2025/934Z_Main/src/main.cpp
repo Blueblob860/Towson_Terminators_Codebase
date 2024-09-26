@@ -349,20 +349,6 @@ public:
 
     for (int i = 0; i < motorList.size(); i++)
     {
-      /* OLD CODE 
-      if (motorList[i].getMotorCartridge() == vex::gearSetting::ratio36_1)
-      {
-        motorCartridgeType = "Red";
-      }
-      else if (motorList[i].getMotorCartridge() == vex::gearSetting::ratio18_1)
-      {
-        motorCartridgeType = "Green";
-      }
-      else
-      {
-        motorCartridgeType = "Blue";
-      } */
-
       switch(motorList[i].getMotorCartridge()) {
         case (vex::gearSetting::ratio36_1):
           motorCartridgeType = "Red";
@@ -438,22 +424,6 @@ vex::color getColorFromValue(std::string value, Keywords keyword)
 {
   if (keyword == GAME_STATE)
   {
-    /* if (value == "AUTON")
-    {
-      return color::orange;
-    }
-    else if (value == "DRIVER")
-    {
-      return color::green;
-    }
-    else if (value == "PRE-AUTON")
-    {
-      return color::yellow;
-    }
-    else
-    {
-      return color::red;
-    } */
     switch(value) {
       case ("AUTON"):
         return color::orange;
@@ -471,18 +441,6 @@ vex::color getColorFromValue(std::string value, Keywords keyword)
   }
   else if (keyword == MOTOR_CARTRIDGE)
   {
-    /* if (value == "Green")
-    {
-      return color::green;
-    }
-    else if (value == "Red")
-    {
-      return color::red;
-    }
-    else
-    {
-      return color::blue;
-    } */
     switch(value) {
       case ("Green"):
         return color::green;
@@ -513,34 +471,28 @@ vex::color getColorFromValue(bool value, Keywords keyword)
 {
   if (keyword == USER_INPUT)
   {
-    if (value)
-    {
+    if (value) {
       return color::orange;
     }
-    else
-    {
+    else {
       return color::green;
     }
   }
   else if (keyword == MOTOR_CONNECTION)
   {
-    if (value)
-    {
+    if (value) {
       return color::green;
     }
-    else
-    {
+    else {
       return color::red;
     }
   }
   else if (keyword == CONTROLLER_CONNECTION)
   {
-    if (value)
-    {
+    if (value) {
       return color::green;
     }
-    else
-    {
+    else {
       return color::red;
     }
   }
@@ -612,22 +564,6 @@ vex::color getColorFromValue(GameStates value, Keywords keyword)
 {
   if (keyword == GAME_STATE)
   {
-    /* if (value == AUTONOMOUS)
-    {
-      return color::orange;
-    }
-    else if (value == USER_CONTROL)
-    {
-      return color::green;
-    }
-    else if (value == PRE_AUTONOMOUS)
-    {
-      return color::yellow;
-    }
-    else
-    {
-      return color::red;
-    } */
     switch(value) {
       case (AUTONOMOUS):
         return color::orange; break;
